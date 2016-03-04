@@ -23,17 +23,17 @@ function buttonClicked(event)
 	var operation=$this.data("operation").toLowerCase();
 	var opInput=$("#input-"+operation).val();
 	operation=operation.replace("-","/");
-	console.log(operation);
+	// console.log(operation);
 
 	$.ajax({
 		method:'GET',
 		url:"http://localhost:8080/"+operation+"/"+opInput,
 		success: function(data){
 			var thedata=JSON.parse(data);
-			console.log("thedata: ",thedata);
+			// console.log("thedata: ",thedata);
 			var resultSel=operation.replace("math/","");
 			resultSel="#result"+resultSel.replace(/\w/,e=>e.toUpperCase());
-			console.log(resultSel);
+			// console.log(resultSel);
 			var $resultElt=$(resultSel);
 			switch(operation)
 			{

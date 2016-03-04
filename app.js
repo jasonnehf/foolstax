@@ -14,8 +14,8 @@ startHTTPServer();
 
 var server = http.createServer(function(req,res) {
 	if(req.url==="/favicon.ico") return;
-	console.log('req.url: ',req.url);
-	console.log('req.method: ', req.method);
+	// console.log('req.url: ',req.url);
+	// console.log('req.method: ', req.method);
 
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Request-Method', '*');
@@ -59,7 +59,7 @@ var server = http.createServer(function(req,res) {
 				break;
 
 				case "div":
-					result = (urlParts[1]!==undefined) ? parseInt(urlParts[0])/parseInt(urlParts[1]) : NaN;
+					result = (urlParts[1]!==undefined) ? (parseInt(urlParts[0])/parseInt(urlParts[1])).toFixed(4) : NaN;
 					result = {type:"div",input:urlParts,result:[result]};
 				break;
 
@@ -130,9 +130,9 @@ var server = http.createServer(function(req,res) {
 					return p+(c.match(/\w/g) || []).length;
 				},0);
 				var wordcount = words.length;
-				var avgwordlength = lettercount/wordcount;
+				var avgwordlength = (lettercount/wordcount).toFixed(4);
 				stats.push({num_letters:lettercount,num_words:wordcount,avg_word_length:avgwordlength});
-				console.log(words);
+				// console.log(words);
 			});
 			result = {type:"sentence",input:urlParts.map(e=>decodeURI(e)),result:stats};
 		break;
@@ -144,7 +144,7 @@ var server = http.createServer(function(req,res) {
 	}
 
 	res.write(JSON.stringify(result)+"\n");
-	console.log("result: ",result);
+	// console.log("result: ",result);
 	res.end();
 });
 
