@@ -1,0 +1,19 @@
+Hey guys!
+
+You may have already run into some errors with the AJAX.  These errors refer to Cross origin requests.  A cross origin request is when a request from one origin (localhost:3000) is requesting from a different origin (localhost:8000).  Here are the errors, and how to fix them:
+
+XMLHttpRequest cannot load localhost:8000/square/5. Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, https, chrome-extension-resource.
+This means you need to tell ajax that you're using HTTP to make the request.  To fix this, simply prefix the URL with http://  (http://localhost:8000...)
+
+XMLHttpRequest cannot load http://localhost:8000/square/5. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://localhost:3000' is therefore not allowed access.
+This means we need to configure the server to allow these Cross Origin requests.  To do this, we can add some special response headers.  Add the following four res.setHeader lines to the top of your request handler function in your app.js in Node:
+
+var server = http.createServer(function(req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Request-Method', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET');
+  res.setHeader('Access-Control-Allow-Headers', '*');
+  ...
+
+
+And that should do it!  Let me know if you have any other issues.

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>pH00L staX, bish!</title>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="http://bootswatch.com/slate/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+		<div class="jumbotron">
+				<h1>pH00L staX, bishiss!</h1>
+		</div>
+		<div class="container">
+				<div class="row">
+						<div class="col-xs-12 col-md-6">
+								<div class="panel panel-default">
+										<div class="panel-heading">Math</div>
+										<div class="panel-body">
+												<div class="col-xs-12 well well-sm">
+														<h4>Sum</h4>
+														<label class="control-label">Enter a series of numbers, separated by slashes ('/')</label>
+														<input type="text" class="form-control" id="input-math-sum" data-operation="math-sum" placeholder="Example: -1/2/-3.5/4/50">
+														<button id="getSumBtn" data-operation="math-Sum" class="btn btn-default">Sum!</button><div id="resultSum" class="well myhidden"></div>
+												</div>
+												<div class="col-xs-12 well well-sm">
+														<h4>Square</h4>
+														<label class="control-label">Enter a number</label>
+														<input type="text" class="form-control" id="input-math-square" data-operation="math-square" placeholder="Example: 42">
+														<button id="getSquareBtn" data-operation="math-Square" class="btn btn-default">Square!</button><div id="resultSquare" class="well myhidden"></div>
+												</div>
+												<div class="col-xs-12 well well-sm">
+														<h4>Factorial</h4>
+														<label class="control-label">Enter a number</label>
+														<input type="text" class="form-control" id="input-math-fact" data-operation="math-fact" placeholder="Example: 42">
+														<button id="getFactBtn" data-operation="math-Fact" class="btn btn-default">Factorial!</button><div id="resultFact" class="well myhidden"></div>
+												</div>
+												<div class="col-xs-12 well well-sm">
+														<h4>Min</h4>
+														<label class="control-label">Enter a series of numbers, separated by slashes ('/')</label>
+														<input type="text" class="form-control" id="input-math-min" data-operation="math-min" placeholder="Example: -1/2/-3.5/4/50">
+														<button id="getMinBtn" data-operation="math-Min" class="btn btn-default">Min!</button><div id="resultMin" class="well myhidden"></div>
+												</div>
+												<div class="col-xs-12 well well-sm">
+														<h4>Max</h4>
+														<label class="control-label">Enter a series of numbers, separated by slashes ('/')</label>
+														<input type="text" class="form-control" id="input-math-max" data-operation="math-max" placeholder="Example: -1/2/-3.5/4/50">
+														<button id="getMaxBtn" data-operation="math-Max" class="btn btn-default">Max!</button><div id="resultMax" class="well myhidden"></div>
+												</div>
+												<div class="col-xs-12 well well-sm">
+														<h4>Add</h4>
+														<label class="control-label">Enter two numbers, separated by slashes ('/')</label>
+														<input type="text" class="form-control" id="input-math-add" data-operation="math-add" placeholder="Example: 20/5">
+														<button id="getAddBtn" data-operation="math-Add" class="btn btn-default">Add!</button><div id="resultAdd" class="well myhidden"></div>
+												</div>
+												<div class="col-xs-12 well well-sm">
+														<h4>Subtract</h4>
+														<label class="control-label">Enter two numbers, separated by slashes ('/')</label>
+														<input type="text" class="form-control" id="input-math-sub" data-operation="math-sub" placeholder="Example: 20/5">
+														<button id="getSubBtn" data-operation="math-Sub" class="btn btn-default">Subtract!</button><div id="resultSub" class="well myhidden"></div>
+												</div>
+												<div class="col-xs-12 well well-sm">
+														<h4>Multiply</h4>
+														<label class="control-label">Enter two numbers, separated by slashes ('/')</label>
+														<input type="text" class="form-control" id="input-math-mult" data-operation="math-mult" placeholder="Example: 20/5">
+														<button id="getMultBtn" data-operation="math-Mult" class="btn btn-default">Multiply!</button><div id="resultMult" class="well myhidden"></div>
+												</div>
+												<div class="col-xs-12 well well-sm">
+														<h4>Divide</h4>
+														<label class="control-label">Enter two numbers, separated by slashes ('/')</label>
+														<input type="text" class="form-control" id="input-math-div" data-operation="math-div" placeholder="Example: 20/5">
+														<button id="getDivBtn" data-operation="math-Div" class="btn btn-default">Divide!</button><div id="resultDiv" class="well myhidden"></div>
+												</div>
+												<div class="col-xs-12 well well-sm">
+														<h4>Exponent (X<sup>y</sup>)</h4>
+														<label class="control-label">Enter two numbers, separated by slashes ('/')</label>
+														<input type="text" class="form-control" id="input-math-pow" data-operation="math-pow" placeholder="Example: 20/5">
+														<button id="getPowBtn" data-operation="math-Pow" class="btn btn-default">Exponent!</button><div id="resultPow" class="well myhidden"></div>
+												</div>
+										</div>
+								</div>
+						</div>
+						<div class="col-xs-12 col-md-6">
+								<div class="panel panel-default">
+										<div class="panel-heading">Sentence Stats!</div>
+										<div class="panel-body">
+												<label class="control-label">Enter a sentence:</label>
+												<input type="text" class="form-control" id="input-sentence" data-operation="sentence" placeholder="Example: &quot;If it weren't for my horse, i wouldn't have spent that year in college.&quot;">
+												<button id="getSentenceBtn" data-operation="Sentence" class="btn btn-default">Stats!</button>
+										</div><div class="panel-footer myhidden" id="resultSentence"></div>
+								</div>
+						</div>
+						<div class="col-xs-12 col-md-6">
+								<div class="panel panel-default">
+										<div class="panel-heading">Birthday</div>
+											<div class="panel-body">
+												<label class="control-label">Enter your birthday (mm/dd/yyyy) :</label>
+												<input type="text" class="form-control" id="input-birthday" data-operation="birthday" placeholder="Example: 02/28/1985">
+												<button id="getBirthdayBtn" data-operation="Birthday" class="btn btn-default">Grab!</button>
+										</div><div class="panel-footer myhidden" id="resultBirthday"></div>
+								</div>
+						</div>
+						<div class="col-xs-12 col-md-6">
+								<div class="panel panel-default">
+										<div class="panel-heading">Gravatar Grabbar!</div>
+										<div class="panel-body">
+												<label class="control-label">Enter your email address:</label>
+												<input type="text" class="form-control" id="input-gravatar" data-operation="gravatar" placeholder="Example: bananapants@hotmail.com">
+												<button id="getGravatarBtn" data-operation="Gravatar" class="btn btn-default">Grab!</button>
+										</div><div class="panel-footer myhidden" id="resultGravatar"></div>
+								</div>
+						</div>
+				</div>
+		</div>
+		<script src="http://cdn.jsdelivr.net/lodash/4.6.1/lodash.min.js"></script>
+		<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script src="script.js"></script>
+</body>
+
+</html>

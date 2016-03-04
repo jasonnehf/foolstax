@@ -1,0 +1,11 @@
+
+1. jquery get email
+2. make ajax call
+3. receive email 
+4. create hash
+5. make url
+6. reply w/ url
+7. put url in img in DOM
+
+EX
+8. serve html from same server as the rest of this

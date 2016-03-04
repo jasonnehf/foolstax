@@ -1,0 +1,60 @@
+
+Custom APIs
+
+Build a server with a set of APIs using Node, and develop a frontend for it with jQuery.   Implement these endpoints:
+
+1)  Gravitar Url: /gravatar/c@codinghouse.co
+
+	When your server gets a request from [server url]/gravatar/[email address], it should accept an email address from the url and respond with the corresponding gravatar url.  You can create this url by making an MD5 hash of the email address given and then putting it into this example url:  http://www.gravatar.com/avatar/[HASH]
+
+	Here would be mine:
+	http://www.gravatar.com/avatar/c417050fa67e3d2e9b690636c2ce80ec
+
+	Discover an npm package made for making MD5 hashes here: https://www.npmjs.com/package/md5
+
+2) Math APIs:
+	/math/square/5  =>  25
+	/math/sum/3/3/3  => 9
+
+	Think of other math operations you can do, too!
+
+3) Sentence Counter:  /sentence/A%20Sentence%20here
+
+	This endpoint will accept a sentence string, and then count up the letters and words, and return the average word length of that string.  This will be URI encoded (the spaces will be %20s).  Your server should return an object with all of the required counts.  This object will need to be stringified.
+
+	Note:  check out encodeURI(), decodeURI(), encodeURIComponent(), and decodeURIComponent()  to do the encoding and decoding. 
+
+	Also, use JSON.stringify() to turn your object into a string.
+
+4) Birthday Info:  /birthday/12/26/1986
+
+	This endpoint will accept a birthday in the format mm/dd/yyyy, and return an object with information regarding that.  It should calculate the person's age in years, as well as the date nicely formatted.  These values should be returned in a stringified object.
+
+	Use Moment.js to do this!!
+
+	ex:  {"age": 29, "date": "Friday, December 26, 1986"}
+
+MVP:
+
+	*	Properly implement those API endpoints.
+
+	*	Create a frontend that will consume these APIs.  Create a separate frontend app with HTML/CSS/JS powered by jQuery that will allow a user to use these endpoints.  jQuery will interact with your server with AJAX.
+
+	*	Your Node server should be run on one port, and your frontend should be on a different one.  You can change the server port so you don't have the EADDRINUSE error.
+
+	*	Your frontend can all be on one page, but you should have different inputs to do different things.  Have some number inputs to interact with the math endpoints, a textarea to enter the sentences, and a date input to get the birthday info, etc.
+
+	*	For the gravatar feature, the user should be able to enter an email and click a button, and the gravatar image should appear on the page.
+	
+	You can use libraries, including Bootstrap or Lodash.
+
+Submission:
+	
+	* You can keep your server code separate from your fronend code, but commit them together in one repo.  For instance, you can have your project directory which has your repo, and inside can be separate server and client directories, if you want.
+
+	* Push your code to a repo on GitHub, and put the link to that repo into the submission form.  Please name your app Custom APIs.  As we aren't deploying, you don't need to submit an app link. 
+
+Extra Feature:
+	* Learn how to make your server serve out your frontend. it out.  (a GET to the root of your server should respond with this main page).  Figure out how get that html to load jQuery and some javascript, so that your app can work as just one server.
+
+	* Expand your math apis to implement more calculator features.
